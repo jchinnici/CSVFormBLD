@@ -1,0 +1,36 @@
+<head>
+  CSV File Builder
+</head>
+<body>
+  <h1>Build your CSV file form</h1>
+  <div>
+    Form Name: <input [(ngModel)]="form.Name" name="formName" />
+  </div>
+  <hr width="100%" size="3" />
+  <div>
+    <p-button class="mainbuttons" label="Add Text Field" styleClass="ui-button-raised ui-button-rounded ui-button-success" (click)="createField('Text','[a-zA-Z ]*');"></p-button>
+    <p-button class="mainbuttons" label="Add Date Field" styleClass="ui-button-raised ui-button-rounded ui-button-secondary" (click)="createField('Date','^\\d{1,8}$');"></p-button>
+    <p-button class="mainbuttons" label="Add Number Field" styleClass="ui-button-raised ui-button-rounded ui-button-danger" (click)="createField('Number','^\\d{1,20}$');"></p-button>
+    <p-button class="mainbuttons" label="Add Phone Number Field" styleClass="ui-button-raised ui-button-rounded ui-button-warning" (click)="createField('Phone number', '^\\d{1,10}$');"></p-button>
+    <p-button class="mainbuttons" label="Add Email Field" styleClass="ui-button-raised ui-button-rounded ui-button-info" (click)="createField('Email','^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$');"></p-button>
+  </div>
+  <hr width="100%" size="3" />
+  <div class="row">
+    <br />
+    <div *ngFor="let x of form.fields; let i = index">
+      <div width="100%">
+        <button class="deleteButton" (click)="form.fields.splice(i,1)">Delete</button>
+        <input class="col-4" [(ngModel)]="x.fieldName" [pattern]="namePattern" required #field="ngModel" [placeholder]="x.type"
+               [ngClass]="{ 'textfields' : x.type=='Text', 'datefields' : x.type=='Date', 'numberfields' : x.type=='Number',
+               'phonenumberfields' : x.type=='Phone number', 'emailfields' : x.type=='Email'}" />
+        <b [ngClass]="{ 'text-success' : !field.invalid, 'text-danger' : field.invalid }">{{field.invalid?'Field is Required' : ''}}</b>
+      </div>
+    </div>
+  </div>
+  <button (click)="submit()">Create Form</button>
+</body>
+<hr />
+<!--<pre>{{fieldArry | json}}</pre>SHows the array filling-->
+
+<app-nav-menu></app-nav-menu>
+

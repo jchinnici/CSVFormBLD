@@ -1,0 +1,60 @@
+.mainbuttons {
+  margin: 30px;
+  font-size: 12px;
+}
+
+.fields {
+  margin: 20px;
+  width: 200px;
+  min-width: 200px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+}
+.textfields {
+  margin: 25px;
+  width: 200px;
+  min-width: 200px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #4cff00;
+}
+.datefields {
+  margin: 25px;
+  width: 200px;
+  min-width: 200px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+}
+.numberfields {
+  margin: 25px;
+  width: 200px;
+  min-width: 200px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #ff0000;
+}
+.phonenumberfields {
+  margin: 25px;
+  width: 200px;
+  min-width: 200px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #ffd800;
+}
+.emailfields {
+  margin: 25px;
+  width: 200px;
+  min-width: 200px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #0026ff;
+}
+.deleteButton{
+  margin: 20px;
+  color: darkred;
+}
+.submitbutton{
+
+}
